@@ -11,6 +11,7 @@ const mdHandler = (e: Event): void => {
 	oldParent.removeChild(el)
 	newParent.appendChild(el)
 	el.style.position = 'absolute'
+	el.style.transform = 'rotate(15deg) scale(1.1)'
 }
 
 const muHandler = (e: Event): void => {
@@ -30,6 +31,7 @@ const muHandler = (e: Event): void => {
 		startingPos?.appendChild(currentItem!)
 		el!.style.position = ''
 	}
+	el!.style.transform = 'rotate(0deg) scale(1)'
 	currentItem = null
 }
 

@@ -11,6 +11,7 @@ const mdHandler = (e) => {
     oldParent.removeChild(el);
     newParent.appendChild(el);
     el.style.position = 'absolute';
+    el.style.transform = 'rotate(15deg) scale(1.1)';
 };
 const muHandler = (e) => {
     var _a;
@@ -31,6 +32,7 @@ const muHandler = (e) => {
         startingPos === null || startingPos === void 0 ? void 0 : startingPos.appendChild(currentItem);
         el.style.position = '';
     }
+    el.style.transform = 'rotate(0deg) scale(1)';
     currentItem = null;
 };
 const mouseMoveHandler = (e) => {

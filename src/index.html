@@ -9,21 +9,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body id="body">
-<div id="laneone" class="lane">
+<div id="laneone" class="lane" onmouseleave="normalBorder(event)">
   lane one
   <div id="0" class="item" onmousedown="mdHandler(event)" onmouseup="muHandler(event)">
     One
   </div>
 </div>
 
-<div id="lanetwo" class="lane">
+<div id="lanetwo" class="lane" onmouseleave="normalBorder(event)">
   lane two
   <div id="2" class="item" onmousedown="mdHandler(event)" onmouseup="muHandler(event)">
     Two
   </div>
 </div>
 
-<div id="lanethree" class="lane">
+<div id="lanethree" class="lane" onmouseleave="normalBorder(event)">
   Lane three
   <div id="3" class="item" onmousedown="mdHandler(event)" onmouseup="muHandler(event)">
     Three

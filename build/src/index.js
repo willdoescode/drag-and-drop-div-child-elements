@@ -8,7 +8,6 @@ const mdHandler = (e) => {
     const newParent = document.querySelector('body');
     const oldParent = el.parentElement;
     startingPos = oldParent;
-    console.log(startingPos);
     oldParent.removeChild(el);
     newParent.appendChild(el);
     el.style.position = 'absolute';
@@ -32,6 +31,7 @@ const muHandler = (e) => {
         startingPos === null || startingPos === void 0 ? void 0 : startingPos.appendChild(currentItem);
         el.style.position = '';
     }
+    currentItem = null;
 };
 const mouseMoveHandler = (e) => {
     const el = currentItem;
@@ -42,6 +42,12 @@ const mouseMoveHandler = (e) => {
 };
 const hoverHandler = (e) => {
     hoverEl = e.target;
+    if (hoverEl.className === 'lane' && currentItem !== null) {
+        hoverEl.style.border = '1px solid green';
+    }
+};
+const normalBorder = (e) => {
+    e.currentTarget.style.border = '1px solid red';
 };
 document.addEventListener('mouseup', muHandler);
 document.addEventListener('mousemove', mouseMoveHandler);

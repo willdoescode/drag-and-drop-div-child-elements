@@ -8,7 +8,6 @@ const mdHandler = (e: Event): void => {
 	const newParent = document.querySelector('body') as HTMLElement
 	const oldParent = el.parentElement as HTMLElement
 	startingPos = oldParent
-	console.log(startingPos)
 	oldParent.removeChild(el)
 	newParent.appendChild(el)
 	el.style.position = 'absolute'
@@ -31,6 +30,7 @@ const muHandler = (e: Event): void => {
 		startingPos?.appendChild(currentItem!)
 		el!.style.position = ''
 	}
+	currentItem = null
 }
 
 const mouseMoveHandler = (e: MouseEvent) => {
@@ -43,6 +43,13 @@ const mouseMoveHandler = (e: MouseEvent) => {
 
 const hoverHandler = (e: MouseEvent) => {
 	hoverEl = e.target as HTMLElement
+	if (hoverEl.className === 'lane' && currentItem !== null) {
+		hoverEl.style.border = '1px solid green'
+	}
+}
+
+const normalBorder = (e: Event) => {
+	(e.currentTarget as HTMLElement).style.border = '1px solid red'
 }
 
 document.addEventListener('mouseup', muHandler)

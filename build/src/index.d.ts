@@ -5,3 +5,4 @@ declare const mdHandler: (e: Event) => void;
 declare const muHandler: (e: Event) => void;
 declare const mouseMoveHandler: (e: MouseEvent) => void;
 declare const hoverHandler: (e: MouseEvent) => void;
+declare const normalBorder: (e: Event) => void;

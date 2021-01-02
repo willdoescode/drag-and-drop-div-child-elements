@@ -5,30 +5,30 @@ let startingPos = null;
 const mdHandler = (e) => {
     const el = e.currentTarget;
     currentItem = el;
-    const newParent = document.querySelector('body');
+    const body = document.querySelector('body');
     const oldParent = el.parentElement;
     startingPos = oldParent;
     oldParent.removeChild(el);
-    newParent.appendChild(el);
+    body.appendChild(el);
     el.style.position = 'absolute';
     el.style.transform = 'rotate(15deg) scale(1.1)';
 };
 const muHandler = (e) => {
     var _a;
     const el = currentItem;
-    const parent = document.querySelector('body');
+    const body = document.querySelector('body');
     if ((hoverEl === null || hoverEl === void 0 ? void 0 : hoverEl.className) === 'lane') {
-        parent.removeChild(el);
+        body.removeChild(el);
         hoverEl === null || hoverEl === void 0 ? void 0 : hoverEl.appendChild(el);
         el.style.position = '';
     }
     else if ((hoverEl === null || hoverEl === void 0 ? void 0 : hoverEl.className) === 'item') {
-        parent.removeChild(el);
+        body.removeChild(el);
         (_a = hoverEl === null || hoverEl === void 0 ? void 0 : hoverEl.parentElement) === null || _a === void 0 ? void 0 : _a.appendChild(el);
         el.style.position = '';
     }
     else {
-        parent.removeChild(el);
+        body.removeChild(el);
         startingPos === null || startingPos === void 0 ? void 0 : startingPos.appendChild(currentItem);
         el.style.position = '';
     }

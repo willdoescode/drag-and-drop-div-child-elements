@@ -5,29 +5,29 @@ let startingPos: HTMLElement | null = null;
 const mdHandler = (e: Event): void => {
 	const el = e.currentTarget as HTMLElement
 	currentItem = el
-	const newParent = document.querySelector('body') as HTMLElement
+	const body = document.querySelector('body') as HTMLElement
 	const oldParent = el.parentElement as HTMLElement
 	startingPos = oldParent
 	oldParent.removeChild(el)
-	newParent.appendChild(el)
+	body.appendChild(el)
 	el.style.position = 'absolute'
 	el.style.transform = 'rotate(15deg) scale(1.1)'
 }
 
 const muHandler = (e: Event): void => {
 	const el = currentItem
-	const parent = document.querySelector('body') as HTMLElement
+	const body = document.querySelector('body') as HTMLElement
 	if (hoverEl?.className === 'lane') {
-		parent.removeChild(el!)
+		body.removeChild(el!)
 		hoverEl?.appendChild(el!)
 		el!.style.position = ''
 	} else if (hoverEl?.className === 'item') {
-		parent.removeChild(el!)
+		body.removeChild(el!)
 		hoverEl?.parentElement?.appendChild(el!)
 		el!.style.position = ''
 	}
 	else {
-		parent.removeChild(el!)
+		body.removeChild(el!)
 		startingPos?.appendChild(currentItem!)
 		el!.style.position = ''
 	}
